@@ -1,15 +1,17 @@
 <template>
   <main class="container mt-5">
-    <form class="row row-cols-lg-auto g-3 align-items-center">
+    <form class="row row-cols-lg-auto g-3 align-items-center mb-5">
       <div class="col">
         <input class="form-control" v-model="newTodoText" type="text" />
       </div>
       <div class="col">
-        <button class="btn btn-primary" @click.prevent="addNewTodo">Add</button>
+        <button class="btn btn-primary" @click.prevent="addNewTodo">
+          Add a new todo item
+        </button>
       </div>
     </form>
     <ul class="list-group">
-      <li class="list-group-item" v-for="todo of todos.allTodos">
+      <li class="list-group-item" v-for="todo of todos.allTodos" :key="todo.id">
         <TodoItem :text="todo.text" @delete="deleteOneTodoById(todo.id)" />
       </li>
     </ul>
