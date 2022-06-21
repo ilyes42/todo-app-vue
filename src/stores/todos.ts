@@ -2,9 +2,9 @@ import { defineStore } from "pinia";
 import type { Todo } from "@/interfaces/Todo";
 
 const INITIAL_TODOS: Array<Todo> = [
-  { id: 1, text: "A", done: false },
-  { id: 2, text: "B", done: false },
-  { id: 3, text: "C", done: false },
+  { id: 1, text: "Learn HTML", done: false },
+  { id: 2, text: "Learn CSS", done: false },
+  { id: 3, text: "Learn JavaScript", done: false },
 ];
 
 export const useTodosStore = defineStore("todos", {
@@ -33,10 +33,10 @@ export const useTodosStore = defineStore("todos", {
      * Marks one todo as done, provided its id.
      * @param id - Todo's id.
      */
-    markOneTodoAsDone(id: number) {
+    setDone(done: boolean, id: number) {
       const todo = this.todos.find((todo) => todo.id === id);
       if (todo) {
-        todo.done = true;
+        todo.done = done;
       }
     },
   },
