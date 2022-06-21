@@ -44,5 +44,11 @@ export const useTodosStore = defineStore("todos", {
     allTodos: (state) => {
       return state.todos;
     },
+    allDoneTodos: (state) => {
+      return state.todos.filter((todo) => todo.done === true);
+    },
+    allNotDoneTodos: (state) => {
+      return state.todos.filter((todo) => todo.done === false);
+    },
   },
 });
