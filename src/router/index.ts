@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from "vue-router";
-import TodoApp from "@/views/TodoApp.vue";
-import Home from "@/views/Home.vue";
+import TodoApp from "@/views/todoApp.vue";
+import Home from "@/views/home.vue";
 
 const routes = [
   {
